@@ -41,7 +41,7 @@ plotEnable = 1;
 
 cor_angulo = [90 270 90 90 90 270 270 270];
 #Loop para realizar o método para as 8 fonte sonoras
-for i=1:1,
+for i=1:8,
   for j=1:3,
     for n=1:20,
       #Atribui o sinal da fonte sonora em análise
