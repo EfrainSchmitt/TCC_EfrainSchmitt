@@ -27,20 +27,13 @@ def record_microphone(device_id, filename):
     print((array_times[1]-array_times[0])/1000/1000)
     audio_segment.export(filename + ".wav", format="wav")
 
-    filename1 = filename + ".csv"
-
-    with open(filename1, mode='w', newline='') as dt:
-        d = csv.writer(dt)
-        # Escreva os dados no arquivo CSV
-        d.writerow(array_times)
-
 # IDs dos dispositivos de áudio (microfones)
 input_devices = [1, 2, 3]  # Substitua pelos IDs dos seus dispositivos
 
 # Inicialize threads para gravar áudio de três microfones simultaneamente
 threads = []
 for i, device_id in enumerate(input_devices):
-    filename = f"FR_T4_microfone_{i + 1}"
+    filename = f"FR_T1_microfone_{i + 1}"
     thread = threading.Thread(target=record_microphone, args=(device_id, filename), daemon=True)
     threads.append(thread)
     thread.start()
